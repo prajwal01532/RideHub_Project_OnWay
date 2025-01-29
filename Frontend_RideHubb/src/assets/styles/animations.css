@@ -1,0 +1,171 @@
+@keyframes glow {
+  0% {
+    filter: drop-shadow(0 0 2px #ff6b00) drop-shadow(0 0 4px #ff6b00);
+  }
+  50% {
+    filter: drop-shadow(0 0 6px #ff6b00) drop-shadow(0 0 8px #ff6b00);
+  }
+  100% {
+    filter: drop-shadow(0 0 2px #ff6b00) drop-shadow(0 0 4px #ff6b00);
+  }
+}
+
+.logo-glow {
+  animation: glow 2s infinite;
+}
+
+.vehicle-card {
+  transition: all 0.4s ease-in-out;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  will-change: transform;
+}
+
+.vehicle-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+.vehicle-image {
+  transition: transform 0.6s ease-in-out;
+  will-change: transform;
+}
+
+.vehicle-card:hover .vehicle-image {
+  transform: scale(1.05);
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.8s ease-in forwards;
+  will-change: transform, opacity;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-in {
+  animation: slideIn 0.8s ease-out forwards;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(-12deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(-12deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(-12deg);
+  }
+}
+
+@keyframes float-delayed {
+  0% {
+    transform: translateY(0px) rotate(6deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(6deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(6deg);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float-delayed 7s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  animation: gradient 15s ease infinite;
+  background-size: 200% 200%;
+}
+
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+/* Vehicle Animation Optimizations */
+.opacity-15 {
+  opacity: 0.15;
+}
+
+.opacity-20 {
+  opacity: 0.20;
+}
+
+/* Smooth transitions for vehicle images */
+img {
+  transition: transform 0.3s ease-out;
+  will-change: transform;
+}
+
+/* Performance optimizations for animations */
+.transform-gpu {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000;
+  will-change: transform;
+}
+
+/* Smooth fade for vehicle overlays */
+.vehicle-overlay {
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Enhanced gradient animation */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  animation: gradientMove 15s ease infinite;
+  background-size: 200% 200%;
+}
